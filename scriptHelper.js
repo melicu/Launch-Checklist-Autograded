@@ -7,18 +7,20 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
     let missionTargetInfo = document.getElementById("missionTarget");
 
-    // Here is the HTML formatting for our mission target div.
-    /*
-                 <h2>Mission Destination</h2>
-                 <ol>
-                     <li>Name: </li>
-                     <li>Diameter: </li>
-                     <li>Star: ${star}</li>
-                     <li>Distance from Earth: </li>
-                     <li>Number of Moons: </li>
-                 </ol>
-                 <img src="">
-    */
+    missionTargetInfo.innerHTML =
+        `
+        <div>
+            <h2>Mission Destination</h2>
+            <ol>
+                <li>Name: ${name}</li>
+                <li>Diameter: ${diameter} </li>
+                <li>Star: ${star} </li>
+                <li>Distance from Earth: ${distance}</li>
+                <li>Number of Moons: ${moons} </li>
+            </ol>
+            <img src=${imageUrl}>
+        </div>
+        `
 }
 
 function validateInput(testInput) {
