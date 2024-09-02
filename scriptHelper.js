@@ -9,7 +9,6 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
     missionTargetInfo.innerHTML =
         `
-        <div>
             <h2>Mission Destination</h2>
             <ol>
                 <li>Name: ${name}</li>
@@ -19,7 +18,6 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                 <li>Number of Moons: ${moons} </li>
             </ol>
             <img src=${imageUrl}>
-        </div>
         `
 }
 
@@ -35,7 +33,6 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
-    let form = document.getElementById("testForm");
     let pilotNameInput = document.querySelector("input[name=pilotName]").value;
     let copilotNameInput = document.querySelector("input[name=copilotName]").value;
     let fuelLevelInput = document.querySelector("input[name=fuelLevel]").value;
@@ -49,10 +46,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
         alert("All fields are required.");
-        return;
+        // return;
     } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel.value) === "Not a Number") {
         alert("Please enter valid data for each field.");
-        return;
+        // return;
     }
 
     if (fuelLevelInput < 10000 && cargoMassInput > 10000) {
@@ -100,8 +97,8 @@ async function myFetch() {
 }
 
 function pickPlanet(planets) {
-    let pickedPlanet = Math.random(planets) * planets.length;
-    return Math.floor(pickedPlanet);
+    let pickedPlanet = Math.floor(Math.random(planets) * planets.length);
+    return planets[pickedPlanet];
 }
 
 
