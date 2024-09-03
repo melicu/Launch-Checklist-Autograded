@@ -1,6 +1,3 @@
-// Write your helper functions here!
-
-
 require('cross-fetch/polyfill');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
